@@ -1,0 +1,39 @@
+<h1>Data hiding (encaptulation) using closure</h1>
+<script>
+    // anyone can access this increment function and can change the count value.
+    var count = 0;
+
+    function increment() {
+        count++;
+        console.log(count);
+    }
+    increment();
+    increment();
+    increment();
+
+    // To overcome this we can use closure to hide data which known as encaptulation. in below given an example.
+    function incrementCounter() {
+        var count = 0;
+
+        return function increment() {
+            count++;
+            console.log(count);
+        }
+    }
+    var counter1 = incrementCounter();
+    counter1();
+    counter1();
+    counter1();
+    counter1();
+    counter1();
+    // incrementCounter()(); // we can call a closure like this also
+
+    // when we create again a new var with incrementCounter then we get again from starting
+    var counter2 = incrementCounter();
+    counter2();
+    counter2();
+
+    // what if there come a situation to find the decrement also. that time this procedure will not work.
+    // reason is this not a scalable process. to find increment and decrement together we can use constructor function.
+    // constructor will describe in another file.
+</script>

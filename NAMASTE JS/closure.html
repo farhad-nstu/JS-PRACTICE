@@ -1,0 +1,65 @@
+<h1>SALAM JS</h1>
+<p>function return inside function. more details function along with lexical environment(function scope inside function scope).</p>
+<p>usage:</p>
+<u>
+    <li>Module design pattern</li>
+    <li>Currying</li>
+    <li>Functions like once</li>
+    <li>Memoize</li>
+    <li>Maintaining sate in async world</li>
+    <li>Settimeout</li>
+    <li>Iterator</li>
+</u>
+
+<p>disadvantage:</p>
+<u>
+    <li>Garbage collector</li>
+    <li>Due to garbage collector it concump extra memory</li>
+</u>
+
+<p>Garbage collector is those where js engine or browser find that there some unused things.</p>
+
+<script>
+    function a() {
+        x = 2, z = 10; // here z is garbage collection as z not used
+        return function b() {
+            console.log(x)
+        }
+    }
+    var y = a()
+        // ...... there may be come some extra line to execute. but our memory will not free up the closure x variable
+        // reason is we may call the closure at any place when we needed. this is garbage collector.
+
+
+    y()
+
+    // when we try to access x in console we can but when try to access z we can not coz of garbage collector
+</script>
+
+<br>
+<script>
+    // function x() {
+    //     var a = 7;
+
+    //     function y() {
+    //         console.log(a)
+    //     }
+    //     return y;
+    // }
+    // var z = x();
+    // z(); // output will be 7
+
+    function x() {
+        var a = 7;
+
+        function y() {
+            console.log(a)
+        }
+        var a = 10;
+        return y;
+    }
+    var z = x();
+    z(); // here a will call by reference not value
+    // output will be 10 reason is function not pass the variable it pass the reference. 
+    // function search for the memory location of a. so it find a is 10
+</script>

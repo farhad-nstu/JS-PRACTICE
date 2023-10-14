@@ -1,0 +1,83 @@
+<h1>SALAM JS</h1>
+<p>SetTimeout. JS jsut never wait for setimeout it work as usual next code and when setiout expires then it call back the settimeout function.</p>
+<br>
+<script>
+    // function x() {
+    //     var a = 7;
+
+    //     setTimeout(function() {
+    //         console.log(a)
+    //     }, 5000); // it prints after 5 sec
+    //     console.log("SALAM JS"); // it print first
+    // }
+    // x();
+
+
+
+
+    // here a will call by reference not value
+    // output will be 10 reason is function not pass the variable it pass the reference. 
+    // function search for the memory location of a. so it find a is 10
+    // function x() {
+    //     // let a = 7;
+    //     var a = 7 // same will be print
+
+    //     setTimeout(function() {
+    //         console.log(a)
+    //     }, 1000); // it prints after 5 sec
+    //     a = 10
+    //     console.log("SALAM JS"); // it print first
+    // }
+    // x();
+
+
+
+
+
+    // this will print 6 5 times not print 1 2 3 4 5 reason is i decalre as var. when declare as var every 
+    // call of function reference the same memory not value. again here is call by reference not value formula
+    // also var is a function scope or global scope
+    // function x() {
+    //     for (var i = 1; i <= 5; i++) {
+    //         setTimeout(function() {
+    //             console.log(i)
+    //         }, i * 1000);
+    //     }
+    //     console.log("SALAM JS"); // it print first
+    // }
+    // x();
+
+
+
+
+
+
+    // this will print 1 2 3 4 5 reason is i decalre as let
+    // as let is block scope. every call of function it return the i'th value as difference
+    // function x() {
+    //     for (let i = 1; i <= 5; i++) {
+    //         setTimeout(function() {
+    //             console.log(i)
+    //         }, i * 1000);
+    //     }
+    //     console.log("SALAM JS"); // it print first
+    // }
+    // x();
+
+
+
+    // when i have to do when we have to print 1 2 3 4 5 using var. as var is fnction scope so it refer always same memory. To overome this 
+    // Only closure may help us. using closure we can print 1 2 3 4 using var as closure make a new copy of every function call.
+    // in below i write this.
+    function x() {
+        for (var i = 1; i <= 5; i++) {
+            function helper(a) {
+                setTimeout(function() {
+                    console.log(a)
+                }, a * 1000);
+            }
+            helper(i);
+        }
+    }
+    x();
+</script>

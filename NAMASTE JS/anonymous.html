@@ -1,0 +1,58 @@
+<h1>AnnoNymous Function</h1>
+<script>
+    // when i call it from top then a will work as usual but b will not work.
+    // reason is hoisting. 
+    // a()
+    // b()
+
+    // so this is the difference between statement and expression
+
+    // function statement/declaration
+    function a() {
+        console.log("a is called")
+    }
+    // a() // if we call from here it will works
+
+
+
+
+
+    // function expression
+    // anonymous function is like as a function expression
+    var b = function() {
+            console.log("b is called")
+        }
+        // b() // if we call from here it will also works
+
+
+
+    // Named function expression
+    // var c = function xyz() {
+    //     console.log("c is called")
+    //     console.log(xyz) // can call here
+    // }
+
+    // c() // we can call
+    // xyz() // we can not call. will give reference error
+
+
+
+    // difference between parameters and arguments
+    // var d = function(param1, param2) { // identifier in function is called params
+    //     console.log("c is called")
+    // }
+
+    // c(1, 2) // arguments
+
+
+
+    // First class function: Ability to used like values
+    // first class function is konwn as pass function as argument to another function
+    var e = function(param) { // identifier in function is called params
+        console.log(param)
+    }
+
+    e(function() {
+
+        }) // arguments
+</script>

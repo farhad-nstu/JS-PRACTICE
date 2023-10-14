@@ -1,0 +1,25 @@
+<h1>Constructor function example</h1>
+<script>
+    function IncrementCounter() {
+        var count = 0;
+
+        this.increment = () => {
+            count++;
+            console.log("increment " + count);
+        }
+
+        this.decrement = () => {
+            count--;
+            console.log("decrement " + count);
+        }
+    }
+    var counter1 = new IncrementCounter();
+    counter1.increment();
+    counter1.increment();
+    counter1.increment();
+    counter1.increment();
+
+    counter1.decrement();
+    counter1.decrement();
+    counter1.decrement();
+</script>
