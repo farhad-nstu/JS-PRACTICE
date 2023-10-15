@@ -1,0 +1,16 @@
+<h1>Callback & EventListener</h1>
+<button id="click_me">Click</button>
+<script>
+    // document.getElementById("click_me").addEventListener("click", function xyz() {
+    //     console.log("Clicked");
+    // });
+
+    // To count the increment we can do it as a closure
+    function callEvenListener() {
+        let count = 0
+        document.getElementById("click_me").addEventListener("click", function xyz() {
+            console.log("Clicked", ++count, " times");
+        });
+    }
+    callEvenListener()
+</script>

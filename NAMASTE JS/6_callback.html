@@ -1,0 +1,27 @@
+<h1>Callback & EventListener</h1>
+<script>
+    // Callbakc function
+    // In previous we can know that function can pass to another
+    //  function as an argument. This is known as callback function
+    // function x(y) {
+    //     // code here..
+    // }
+    // x(function y() {
+    //     // code here..
+    // })
+
+    // JavaScript is a Synchronous Single Threaded Language
+    // but during callback, settimeout it works as asynchronous
+    setTimeout(function() {
+        console.log("time")
+    }, 4000)
+
+    function x(y) {
+        console.log("x")
+        y()
+    }
+
+    x(function y() {
+        console.log("y")
+    })
+</script>
