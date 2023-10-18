@@ -1,0 +1,27 @@
+<h1>EVENT LOOP</h1>
+
+<u>
+    <li>setTimeout</li>
+    <li>Fetch()</li>
+    <li>Console</li>
+    <li>DOM APIs (document.getElemenById, document.on(click) etc.)</li>
+    <li>Localstorage</li>
+    <li>Location (https://)</li>
+
+    <p>These all are not a part of JS thats are part of Browser.</p>
+
+    <p>when we call a addEventListener btn all callback function store inside Web APIs. After finish all task in Global Execution Context 
+        then these call back push into calback queue. and then via event look it moves to call stack.
+    </p>
+
+    <p>Event lool always notice that is call stack is empty (Global Execution finished) and is there anythings in call back queue.
+        if found somethings in call back queue then push it into call stack.</p>
+
+    <p>Here another queue (micro tasks queue) which are more priority come first then call back queue. 
+        Such that are promises and mutation observers. Event look first notice the microtask queue. then call back queue.</p>
+
+    <p>As micro task queue is the first priority then call back queue os if there many many micro task queue then what happen 
+        in call back queue. this situation is called STARVATION</p>
+
+    callback function -> callback queue -> event loop -> call stack -> execution 
+</u>
