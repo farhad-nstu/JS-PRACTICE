@@ -1,0 +1,48 @@
+<h1>HOISTING</h1>
+<p>We can access variable/function without initialize it or invoke it. At that time it shows undefined in variable and print the whole function during function. This is called hoisting.</p>
+<p>We can access function before it initialized just because of hoisting.</p>
+<script>
+    getName();
+    console.log(x)
+    console.log(getName)
+
+    var x = 4;
+
+    function getName() {
+        console.log("Hello world!")
+    }
+
+    // the above will 
+    // Hello world 
+    // undefined 
+    // and the whole function 
+
+
+
+    getName();
+    console.log(x)
+    console.log(getName)
+
+    // var x = 4;
+    function getName() {
+        console.log("Hello world!")
+    }
+    // The above will give an error that x is not defined.
+
+
+    getName();
+    console.log(x)
+    console.log(getName)
+
+    // var x = 4;
+    var fn = function getName() {
+            console.log("Hello world!")
+        }
+        // or
+    var fn = () => {
+            console.log("Hello world!");
+        }
+        // The above also show fn is not defined
+
+    // These whole things are hoisting
+</script>

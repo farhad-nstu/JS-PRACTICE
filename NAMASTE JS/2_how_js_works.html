@@ -1,0 +1,23 @@
+<h1>HOW JS WORKS</h1>
+<p>Functions are the heart of JS.</p>
+<p>When invoke a function/ call a fnction a new execution context is created for this function in JS</p>
+<p>RETURN: is a special keyword which tells the function go back where function was invoked.</p>
+
+<h5>Call Stack:</h5>
+<p>Call stack maintains order of execution of execution contexts</p>
+<p> It's like as a stack where all things are stored. The first things stored here is Global Execution Context (GEC). And then when any new execution context is created then it is pushed in the stack. after completing the new execution context job then it
+    is pop form the stack. </p>
+
+<p>The below function works as following...</p>
+stack = [GEC] stack = [GEC, E1] stack = [GEC] (E1 pop coz it's job is finished.) stack = [GEC, E2] stack = [GEC] (E2 pop coz it's job is finished.) stack = [] (All are done)
+
+<script>
+    var n = 2;
+
+    function square(num) {
+        var ans = num * num;
+        return ans;
+    }
+    var square2 = square(n)
+    var square3 = square(3)
+</script>

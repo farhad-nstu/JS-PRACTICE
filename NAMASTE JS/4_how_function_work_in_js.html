@@ -1,0 +1,41 @@
+<h1>HOW FUNCTION WORK IN JS</h1>
+<script>
+    var x = 1;
+    a();
+    b();
+    console.log(x)
+
+    function a() {
+        var x = 10;
+        console.log(x);
+    }
+
+    function b() {
+        var x = 100;
+        console.log(x);
+    }
+    // The above output will be 
+    // 10
+    // 100
+    // 1
+
+
+    var x = 1;
+    a();
+    b();
+    console.log(x)
+
+    function a() {
+        // var x = 10;
+        console.log(x);
+    }
+
+    function b() {
+        var x = 100;
+        console.log(x);
+    }
+    // The above output will be 
+    // 1 (It's because function block first search for loal variable. if not found then it search for global variable.)
+    // 100
+    // 1
+</script>
